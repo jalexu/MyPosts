@@ -10,11 +10,29 @@
 		3E9D75A4164075744520F8B6 /* Pods_MyPosts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB8F4B3DF78DDB8D75C27FE /* Pods_MyPosts.framework */; };
 		7F060B556118A276851FAF49 /* Pods_MyPostsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7036CF57059C7FC76B5183CD /* Pods_MyPostsTests.framework */; };
 		C2AF12D12351A96F00329A15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12D02351A96F00329A15 /* AppDelegate.swift */; };
-		C2AF12D62351A96F00329A15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2AF12D42351A96F00329A15 /* Main.storyboard */; };
 		C2AF12D92351A96F00329A15 /* MyPosts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12D72351A96F00329A15 /* MyPosts.xcdatamodeld */; };
 		C2AF12DB2351A97300329A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2AF12DA2351A97300329A15 /* Assets.xcassets */; };
 		C2AF12E92351A97300329A15 /* MyPostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12E82351A97300329A15 /* MyPostsTests.swift */; };
-		C2AF12FB2351AB7600329A15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12D02351A96F00329A15 /* AppDelegate.swift */; };
+		C2AF12FD2351AF0500329A15 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12FC2351AF0500329A15 /* ViewModelProtocol.swift */; };
+		C2AF12FF2351AF1A00329A15 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12FE2351AF1A00329A15 /* PostsViewModel.swift */; };
+		C2AF13012351AF4800329A15 /* ListPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13002351AF4800329A15 /* ListPostsViewController.swift */; };
+		C2AF13082351AFDC00329A15 /* PostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13072351AFDC00329A15 /* PostsApi.swift */; };
+		C2AF130A2351B01600329A15 /* PostsApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13092351B01600329A15 /* PostsApiRepository.swift */; };
+		C2AF130C2351B04C00329A15 /* PostsApiRepositoryBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF130B2351B04C00329A15 /* PostsApiRepositoryBehavior.swift */; };
+		C2AF130E2351B09000329A15 /* ResponseGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF130D2351B09000329A15 /* ResponseGetData.swift */; };
+		C2AF13112351B0E900329A15 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13102351B0E900329A15 /* Post.swift */; };
+		C2AF13132351B11500329A15 /* PostsBLBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13122351B11500329A15 /* PostsBLBehavior.swift */; };
+		C2AF13152351B13D00329A15 /* PostsBussinesLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13142351B13D00329A15 /* PostsBussinesLogic.swift */; };
+		C2AF13162351B22100329A15 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12FC2351AF0500329A15 /* ViewModelProtocol.swift */; };
+		C2AF13172351B22500329A15 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12FE2351AF1A00329A15 /* PostsViewModel.swift */; };
+		C2AF13182351B22F00329A15 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13102351B0E900329A15 /* Post.swift */; };
+		C2AF13192351B23600329A15 /* ResponseGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF130D2351B09000329A15 /* ResponseGetData.swift */; };
+		C2AF131A2351B24000329A15 /* PostsBLBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13122351B11500329A15 /* PostsBLBehavior.swift */; };
+		C2AF131B2351B24300329A15 /* PostsBussinesLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13142351B13D00329A15 /* PostsBussinesLogic.swift */; };
+		C2AF131C2351B24900329A15 /* PostsApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13092351B01600329A15 /* PostsApiRepository.swift */; };
+		C2AF131D2351B24D00329A15 /* PostsApiRepositoryBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF130B2351B04C00329A15 /* PostsApiRepositoryBehavior.swift */; };
+		C2AF131E2351B25500329A15 /* PostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13072351AFDC00329A15 /* PostsApi.swift */; };
+		C2AF13202351B3F300329A15 /* ListPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2AF131F2351B3F300329A15 /* ListPosts.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +54,23 @@
 		B6DFBAC9804D8BAA3D2DD21B /* Pods-MyPosts-MyPostsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPosts-MyPostsTests.release.xcconfig"; path = "Target Support Files/Pods-MyPosts-MyPostsTests/Pods-MyPosts-MyPostsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C2AF12CD2351A96F00329A15 /* MyPosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AF12D02351A96F00329A15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2AF12D52351A96F00329A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2AF12D82351A96F00329A15 /* MyPosts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyPosts.xcdatamodel; sourceTree = "<group>"; };
 		C2AF12DA2351A97300329A15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2AF12DF2351A97300329A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2AF12E42351A97300329A15 /* MyPostsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPostsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AF12E82351A97300329A15 /* MyPostsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsTests.swift; sourceTree = "<group>"; };
 		C2AF12EA2351A97300329A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2AF12FC2351AF0500329A15 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		C2AF12FE2351AF1A00329A15 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		C2AF13002351AF4800329A15 /* ListPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostsViewController.swift; sourceTree = "<group>"; };
+		C2AF13072351AFDC00329A15 /* PostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsApi.swift; sourceTree = "<group>"; };
+		C2AF13092351B01600329A15 /* PostsApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsApiRepository.swift; sourceTree = "<group>"; };
+		C2AF130B2351B04C00329A15 /* PostsApiRepositoryBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsApiRepositoryBehavior.swift; sourceTree = "<group>"; };
+		C2AF130D2351B09000329A15 /* ResponseGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseGetData.swift; sourceTree = "<group>"; };
+		C2AF13102351B0E900329A15 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C2AF13122351B11500329A15 /* PostsBLBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsBLBehavior.swift; sourceTree = "<group>"; };
+		C2AF13142351B13D00329A15 /* PostsBussinesLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsBussinesLogic.swift; sourceTree = "<group>"; };
+		C2AF131F2351B3F300329A15 /* ListPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListPosts.storyboard; sourceTree = "<group>"; };
 		DEFF11EB9AF51BEC25F4A50A /* Pods-MyPostsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPostsTests.release.xcconfig"; path = "Target Support Files/Pods-MyPostsTests/Pods-MyPostsTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF0EBB3B93783B06F9ACC816 /* Pods-MyPosts-MyPostsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPosts-MyPostsTests.debug.xcconfig"; path = "Target Support Files/Pods-MyPosts-MyPostsTests/Pods-MyPosts-MyPostsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +142,6 @@
 			children = (
 				C2AF12F32351A9FB00329A15 /* MVVM */,
 				C2AF12D02351A96F00329A15 /* AppDelegate.swift */,
-				C2AF12D42351A96F00329A15 /* Main.storyboard */,
 				C2AF12DA2351A97300329A15 /* Assets.xcassets */,
 				C2AF12DF2351A97300329A15 /* Info.plist */,
 				C2AF12D72351A96F00329A15 /* MyPosts.xcdatamodeld */,
@@ -147,6 +174,7 @@
 		C2AF12F42351AA0E00329A15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2AF131F2351B3F300329A15 /* ListPosts.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +182,8 @@
 		C2AF12F52351AA1800329A15 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C2AF12FC2351AF0500329A15 /* ViewModelProtocol.swift */,
+				C2AF12FE2351AF1A00329A15 /* PostsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -161,6 +191,7 @@
 		C2AF12F62351AA2A00329A15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C2AF13002351AF4800329A15 /* ListPostsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +206,9 @@
 		C2AF12F92351AA6D00329A15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C2AF13042351AF9000329A15 /* Repositories */,
+				C2AF13032351AF7600329A15 /* Responses */,
+				C2AF13022351AF6300329A15 /* Requests */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +218,58 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C2AF13022351AF6300329A15 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF130F2351B0CB00329A15 /* BussinesLogic */,
+				C2AF13102351B0E900329A15 /* Post.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		C2AF13032351AF7600329A15 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF130D2351B09000329A15 /* ResponseGetData.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		C2AF13042351AF9000329A15 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF13062351AFBB00329A15 /* Api */,
+				C2AF13052351AFA800329A15 /* Production */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C2AF13052351AFA800329A15 /* Production */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF13092351B01600329A15 /* PostsApiRepository.swift */,
+				C2AF130B2351B04C00329A15 /* PostsApiRepositoryBehavior.swift */,
+			);
+			path = Production;
+			sourceTree = "<group>";
+		};
+		C2AF13062351AFBB00329A15 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF13072351AFDC00329A15 /* PostsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		C2AF130F2351B0CB00329A15 /* BussinesLogic */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF13122351B11500329A15 /* PostsBLBehavior.swift */,
+				C2AF13142351B13D00329A15 /* PostsBussinesLogic.swift */,
+			);
+			path = BussinesLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +283,7 @@
 				C2AF12C92351A96F00329A15 /* Sources */,
 				C2AF12CA2351A96F00329A15 /* Frameworks */,
 				C2AF12CB2351A96F00329A15 /* Resources */,
+				04AE25418C43F06659B3DEE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,7 +302,6 @@
 				C2AF12E02351A97300329A15 /* Sources */,
 				C2AF12E12351A97300329A15 /* Frameworks */,
 				C2AF12E22351A97300329A15 /* Resources */,
-				C12295D1E0469D8AFD02BDC1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,7 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2AF12DB2351A97300329A15 /* Assets.xcassets in Resources */,
-				C2AF12D62351A96F00329A15 /* Main.storyboard in Resources */,
+				C2AF13202351B3F300329A15 /* ListPosts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,21 +371,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C12295D1E0469D8AFD02BDC1 /* [CP] Embed Pods Frameworks */ = {
+		04AE25418C43F06659B3DEE3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyPostsTests/Pods-MyPostsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyPosts/Pods-MyPosts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyPostsTests/Pods-MyPostsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyPosts/Pods-MyPosts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPostsTests/Pods-MyPostsTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPosts/Pods-MyPosts-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC601402A197AEAF7B621E4C /* [CP] Check Pods Manifest.lock */ = {
@@ -353,8 +439,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AF12FF2351AF1A00329A15 /* PostsViewModel.swift in Sources */,
+				C2AF13132351B11500329A15 /* PostsBLBehavior.swift in Sources */,
+				C2AF13152351B13D00329A15 /* PostsBussinesLogic.swift in Sources */,
 				C2AF12D92351A96F00329A15 /* MyPosts.xcdatamodeld in Sources */,
+				C2AF13082351AFDC00329A15 /* PostsApi.swift in Sources */,
 				C2AF12D12351A96F00329A15 /* AppDelegate.swift in Sources */,
+				C2AF130C2351B04C00329A15 /* PostsApiRepositoryBehavior.swift in Sources */,
+				C2AF130A2351B01600329A15 /* PostsApiRepository.swift in Sources */,
+				C2AF12FD2351AF0500329A15 /* ViewModelProtocol.swift in Sources */,
+				C2AF130E2351B09000329A15 /* ResponseGetData.swift in Sources */,
+				C2AF13012351AF4800329A15 /* ListPostsViewController.swift in Sources */,
+				C2AF13112351B0E900329A15 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +458,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2AF12FB2351AB7600329A15 /* AppDelegate.swift in Sources */,
+				C2AF13162351B22100329A15 /* ViewModelProtocol.swift in Sources */,
 				C2AF12E92351A97300329A15 /* MyPostsTests.swift in Sources */,
+				C2AF131B2351B24300329A15 /* PostsBussinesLogic.swift in Sources */,
+				C2AF13172351B22500329A15 /* PostsViewModel.swift in Sources */,
+				C2AF131D2351B24D00329A15 /* PostsApiRepositoryBehavior.swift in Sources */,
+				C2AF13182351B22F00329A15 /* Post.swift in Sources */,
+				C2AF131E2351B25500329A15 /* PostsApi.swift in Sources */,
+				C2AF13192351B23600329A15 /* ResponseGetData.swift in Sources */,
+				C2AF131C2351B24900329A15 /* PostsApiRepository.swift in Sources */,
+				C2AF131A2351B24000329A15 /* PostsBLBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,17 +480,6 @@
 			targetProxy = C2AF12E52351A97300329A15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C2AF12D42351A96F00329A15 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C2AF12D52351A96F00329A15 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C2AF12EB2351A97300329A15 /* Debug */ = {
@@ -513,6 +606,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BFYDDH2HY;
 				INFOPLIST_FILE = MyPosts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,6 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BFYDDH2HY;
 				INFOPLIST_FILE = MyPosts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,7 +644,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2BFYDDH2HY;
 				INFOPLIST_FILE = MyPostsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,6 +654,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaimeuribe.MyPostsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPosts.app/MyPosts";
@@ -571,7 +667,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2BFYDDH2HY;
 				INFOPLIST_FILE = MyPostsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -581,6 +677,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaimeuribe.MyPostsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPosts.app/MyPosts";
