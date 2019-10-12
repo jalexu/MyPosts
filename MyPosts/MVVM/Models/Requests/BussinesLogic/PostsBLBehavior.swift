@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol PostsBLBehavior {
-    func getPostOfData(id: Int) throws -> Observable<ResponseGetData>
+    func getPostOfData(id: Int) throws -> Observable<[ResponseGetData]>
 }

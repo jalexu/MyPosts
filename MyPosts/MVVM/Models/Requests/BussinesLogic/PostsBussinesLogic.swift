@@ -17,8 +17,8 @@ class PostsBussinesLogic: PostsBLBehavior {
         self.postsRepository = respository
     }
     
-    func getPostOfData(id: Int) throws -> Observable<ResponseGetData> {
-        return try postsRepository.getPostOfData(id: id).asObservable().flatMap({ response -> Observable<ResponseGetData> in
+    func getPostOfData(id: Int) throws -> Observable<[ResponseGetData]> {
+        return try postsRepository.getPostOfData(id: id).asObservable().flatMap({ response -> Observable<[ResponseGetData]> in
             return Observable.just(response)
         })
     }

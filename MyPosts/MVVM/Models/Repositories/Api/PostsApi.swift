@@ -52,15 +52,12 @@ extension PostsApi: TargetType {
         
     }
     
-    public var headers: [String : String]? {
-        switch self {
-        case .getPostOfData(_):
-            return [:]
-        }
+    public var headers: [String: String]? {
+        return ["Content-Type": "application/json"]
     }
     
     public var validationType: ValidationType {
-        return .customCodes([200])
+        return .successCodes
     }
     
     

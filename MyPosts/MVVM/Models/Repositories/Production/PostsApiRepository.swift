@@ -15,13 +15,13 @@ class PostsApiRepository: PostsApiRepositoryBehavior{
     
     let postsApi: MoyaProvider<PostsApi>! = MoyaProvider<PostsApi>()
     
-    func getPostOfData(id: Int) throws -> Observable<ResponseGetData> {
-        return postsApi.rx.request(PostsApi.getPostOfData(id: id)).asObservable().flatMap({ responseGetData -> Observable <ResponseGetData> in
+    func getPostOfData(id: Int) throws -> Observable<[ResponseGetData]> {
+        return postsApi.rx.request(PostsApi.getPostOfData(id: id)).asObservable().flatMap({ responseGetData -> Observable <[ResponseGetData]> in
             
             if responseGetData.statusCode == 200 {
                 do {
                     let decoder = JSONDecoder()
-                    let resultResponseGetData = try decoder.decode(ResponseGetData.self, from: responseGetData.data)
+                    let resultResponseGetData = try decoder.decode([ResponseGetData].self, from: responseGetData.data)
                     return Observable.just(resultResponseGetData)
                 }
             } else {

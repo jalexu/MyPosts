@@ -10,7 +10,8 @@
 import Foundation
 
 class ResponseGetData: Codable{
-    
-    var responseGetData: [Post]?
-    
+    var userId: Int?
+    var id: Int?
+    var title: String?
+    var completed: Bool?
 }

@@ -10,6 +10,6 @@ import RxSwift
 
 
 protocol PostsApiRepositoryBehavior {
-    func getPostOfData(id: Int) throws -> Observable<ResponseGetData>
+    func getPostOfData(id: Int) throws -> Observable<[ResponseGetData]>
 }
 
