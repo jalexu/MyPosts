@@ -23,7 +23,7 @@ extension PostsApi: TargetType {
     public var path: String {
         switch self {
         case .getPostOfData:
-            return "todos"
+            return "posts"
         }
         
     }

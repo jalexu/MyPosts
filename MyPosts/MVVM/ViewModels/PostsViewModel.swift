@@ -13,14 +13,17 @@ import RxCocoa
 
 class PostsViewModel: ViewModelProtocol {
     
-    let disposedBag = DisposeBag()
-    var postsBussinesLogic: PostsBLBehavior
+    private let disposedBag = DisposeBag()
+    private var postsBussinesLogic: PostsBLBehavior
     
-    struct Output {
+    struct Input {
         
     }
     
-    struct Input {
+    struct Output {
+        var postsReceived = BehaviorRelay<[ResponseGetData]>(value: [])
+        var isPostsReived = BehaviorRelay<Bool?>(value: nil)
+        var messageError = BehaviorRelay<String?>(value: nil)
         
     }
     
@@ -43,18 +46,19 @@ class PostsViewModel: ViewModelProtocol {
     }
     
     func getData(){
-        
+        self.output.isPostsReived.accept(false)
         do{
             try self.postsBussinesLogic.getPostOfData(id: 1).asObservable().retry(1).subscribe(
                 onNext:{ response in
-                    print(response)
+                    self.output.postsReceived.accept(response)
+                    self.output.isPostsReived.accept(true)
                     
             }, onError: { responseError in
-                print(responseError)
+                self.output.messageError.accept(Bundle.main.object(forInfoDictionaryKey: "APIERROR") as? String)
                 
             }).disposed(by: disposedBag)
         } catch {
-            
+            self.output.messageError.accept("Error por Excepcion")
         }
     }
 }
