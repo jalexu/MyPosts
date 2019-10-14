@@ -19,6 +19,7 @@ class ListPostsViewController: UITableViewController{
     private var postsViewModel = PostsViewModel()
     private let disposedBag = DisposeBag()
     private var dataForTableOfPosts: [ResponseGetData] = []
+    var countCell: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,18 @@ class ListPostsViewController: UITableViewController{
                     self.callDataForCells(position: self.dataForTableOfPosts.count - 1)
                 }
             
+        }).disposed(by: disposedBag)
+        
+        
+        //Change color when cell is read
+        tableViewCell.rx.itemSelected.subscribe(
+            onNext: {
+                [weak self] indexPath in
+                if let cell = self?.tableViewCell.cellForRow(at: indexPath) as? TablePostsViewCell {
+                    cell.contentView.backgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
+                    self!.tableViewCell.deselectRow(at: indexPath, animated: false)
+                }
+                
         }).disposed(by: disposedBag)
         
         //tableViewCell.rx.setDelegate(self).disposed(by: disposedBag)
@@ -70,7 +83,11 @@ class ListPostsViewController: UITableViewController{
         }
     }
     
-   
+    private func reduceCountCell(){
+        if countCell >= 0 {
+            countCell -= 1
+        }
+    }
 
 }
 
@@ -86,9 +103,14 @@ extension ListPostsViewController {
         
         let post = dataForTableOfPosts[indexPath.row]
         
-        cell.imageUser.image = self.selectImage(id: post.id!)
+        cell.imageUser.image = self.selectImage(id: post.userId!)
         cell.labelTitle.text = post.title
         cell.labelDescription.text = post.body
+        
+        if countCell <= 19 {
+            cell.contentView.backgroundColor = UIColor(red: 60 / 255, green: 136 / 255, blue: 246 / 227, alpha: 1)
+            countCell += 1
+        }
         
         return cell
     }
@@ -99,17 +121,29 @@ extension ListPostsViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
-        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexpath) in
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Borrar") { (action, indexpath) in
             
             self.dataForTableOfPosts.remove(at: indexPath.row)
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .right)
             tableView.endUpdates()
+            self.reduceCountCell()
         }
         
         deleteAction.backgroundColor = .red
         return [deleteAction]
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = dataForTableOfPosts[indexPath.row]
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
+        vc?.image = self.selectImage(id: dataForTableOfPosts[indexPath.row].userId!)
+        vc?.idUser = "\(String(describing: post.userId))"
+        vc?.idPost = "\(String(describing: post.id))"
+        vc?.tittle = post.title!
+        vc?.descriptionPost = post.body!
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     
 }
