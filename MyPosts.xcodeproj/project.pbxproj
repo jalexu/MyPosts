@@ -32,6 +32,7 @@
 		C2AF131E2351B25500329A15 /* PostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF13072351AFDC00329A15 /* PostsApi.swift */; };
 		C2AF13202351B3F300329A15 /* ListPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2AF131F2351B3F300329A15 /* ListPosts.storyboard */; };
 		C2B0A99D2353703C006A401C /* TablePostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0A99C2353703C006A401C /* TablePostsViewCell.swift */; };
+		C2B0A99F23538672006A401C /* InicialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0A99E23538672006A401C /* InicialPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C2AF13142351B13D00329A15 /* PostsBussinesLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsBussinesLogic.swift; sourceTree = "<group>"; };
 		C2AF131F2351B3F300329A15 /* ListPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListPosts.storyboard; sourceTree = "<group>"; };
 		C2B0A99C2353703C006A401C /* TablePostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePostsViewCell.swift; sourceTree = "<group>"; };
+		C2B0A99E23538672006A401C /* InicialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicialPageViewController.swift; sourceTree = "<group>"; };
 		DEFF11EB9AF51BEC25F4A50A /* Pods-MyPostsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPostsTests.release.xcconfig"; path = "Target Support Files/Pods-MyPostsTests/Pods-MyPostsTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF0EBB3B93783B06F9ACC816 /* Pods-MyPosts-MyPostsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPosts-MyPostsTests.debug.xcconfig"; path = "Target Support Files/Pods-MyPosts-MyPostsTests/Pods-MyPosts-MyPostsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				C2AF13002351AF4800329A15 /* ListPostsViewController.swift */,
+				C2B0A99E23538672006A401C /* InicialPageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				C2AF13152351B13D00329A15 /* PostsBussinesLogic.swift in Sources */,
 				C2AF12D92351A96F00329A15 /* MyPosts.xcdatamodeld in Sources */,
 				C2AF13082351AFDC00329A15 /* PostsApi.swift in Sources */,
+				C2B0A99F23538672006A401C /* InicialPageViewController.swift in Sources */,
 				C2AF12D12351A96F00329A15 /* AppDelegate.swift in Sources */,
 				C2AF130C2351B04C00329A15 /* PostsApiRepositoryBehavior.swift in Sources */,
 				C2B0A99D2353703C006A401C /* TablePostsViewCell.swift in Sources */,
