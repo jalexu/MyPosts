@@ -15,13 +15,15 @@ class PostsViewModel: ViewModelProtocol {
     
     private let disposedBag = DisposeBag()
     private var postsBussinesLogic: PostsBLBehavior
+    private var persistenceManager = PersistenceManager.shared
+    private var postsReceived: [ResponseGetData] = []
     
     struct Input {
         
     }
     
     struct Output {
-        var postsReceived = BehaviorRelay<[ResponseGetData]>(value: [])
+        var postsFromCoreData = BehaviorRelay<[Post]>(value: [])
         var isPostsReived = BehaviorRelay<Bool?>(value: nil)
         var messageError = BehaviorRelay<String?>(value: nil)
         
@@ -34,7 +36,7 @@ class PostsViewModel: ViewModelProtocol {
         input = Input()
         output = Output()
         self.postsBussinesLogic = PostsBussinesLogic(respository: PostsApiRepository())
-        self.getData()
+        self.getPostsFromApi()
         
     }
     
@@ -50,8 +52,8 @@ class PostsViewModel: ViewModelProtocol {
         do{
             try self.postsBussinesLogic.getPostOfData(id: 1).asObservable().retry(1).subscribe(
                 onNext:{ response in
-                    self.output.postsReceived.accept(response)
-                    self.output.isPostsReived.accept(true)
+                    self.postsReceived = response
+                    self.createPost()
                     
             }, onError: { responseError in
                 self.output.messageError.accept(Bundle.main.object(forInfoDictionaryKey: "APIERROR") as? String)
@@ -61,5 +63,38 @@ class PostsViewModel: ViewModelProtocol {
             self.output.messageError.accept("Error por Excepcion")
         }
     }
+    
+    
+    //create core data 
+    private func createPost(){
+        
+        for posts in self.output.postsFromCoreData.value {
+            let post = Post(context: persistenceManager.context)
+            post.userId = Int16(posts.userId)
+            post.id = Int16 (posts.id)
+            post.title = posts.title
+            post.body = posts.body
+            post.read = false
+            post.favorite = false
+            persistenceManager.saveContext()
+            
+        }
+        let posts = persistenceManager.fetch(Post.self)
+        self.output.postsFromCoreData.accept(posts)
+        self.output.isPostsReived.accept(true)
+    }
+    
+    func getPostsFromApi(){
+        let posts = persistenceManager.fetch(Post.self)
+        
+        if posts.count == 0{
+            self.getData()
+        }else{
+            self.output.postsFromCoreData.accept(posts)
+            self.output.isPostsReived.accept(true)
+        }
+    }
+    
+
 }
 

@@ -18,7 +18,8 @@ class ListPostsViewController: UITableViewController{
     
     private var postsViewModel = PostsViewModel()
     private let disposedBag = DisposeBag()
-    private var dataForTableOfPosts: [ResponseGetData] = []
+    private var dataForTableOfPosts: [Post] = []
+    private var persistenceManager = PersistenceManager.shared
     var countCell: Int = 0
 
     override func viewDidLoad() {
@@ -43,6 +44,8 @@ class ListPostsViewController: UITableViewController{
             onNext: {
                 [weak self] indexPath in
                 if let cell = self?.tableViewCell.cellForRow(at: indexPath) as? TablePostsViewCell {
+                    self!.dataForTableOfPosts[indexPath.row].read = true
+                    self!.persistenceManager.saveContext()
                     cell.contentView.backgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
                     self!.tableViewCell.deselectRow(at: indexPath, animated: false)
                 }
@@ -54,8 +57,9 @@ class ListPostsViewController: UITableViewController{
         
     }
     
+    
     private func callDataForCells(position: Int) {
-        for data in postsViewModel.output.postsReceived.value {
+        for data in postsViewModel.output.postsFromCoreData.value {
             dataForTableOfPosts.append(data)
             addInformationInCell(position: position)
         }
@@ -103,13 +107,15 @@ extension ListPostsViewController {
         
         let post = dataForTableOfPosts[indexPath.row]
         
-        cell.imageUser.image = self.selectImage(id: post.userId!)
+        cell.imageUser.image = self.selectImage(id: Int(post.userId))
         cell.labelTitle.text = post.title
         cell.labelDescription.text = post.body
         
-        if countCell <= 19 {
-            cell.contentView.backgroundColor = UIColor(red: 60 / 255, green: 136 / 255, blue: 246 / 227, alpha: 1)
+        if countCell <= 19 && post.read == false {
+            cell.contentView.backgroundColor = UIColor(red: 60 / 255, green: 136 / 255, blue: 246 / 255, alpha: 1)
             countCell += 1
+        } else {
+            cell.contentView.backgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
         }
         
         return cell
@@ -138,7 +144,7 @@ extension ListPostsViewController {
         let post = dataForTableOfPosts[indexPath.row]
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
-        vc?.image = self.selectImage(id: dataForTableOfPosts[indexPath.row].userId!)
+        vc?.image = self.selectImage(id: Int(dataForTableOfPosts[indexPath.row].userId))
         vc?.idUser = "\(String(describing: post.userId))"
         vc?.idPost = "\(String(describing: post.id))"
         vc?.tittle = post.title!
