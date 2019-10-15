@@ -15,8 +15,6 @@
 		C279784523554E3F00BD75EF /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279784323554BB600BD75EF /* PersistenceManager.swift */; };
 		C279784623554EAD00BD75EF /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279784023554B0E00BD75EF /* Post+CoreDataProperties.swift */; };
 		C279784723554EB100BD75EF /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279783F23554B0E00BD75EF /* Post+CoreDataClass.swift */; };
-		C27978492355618D00BD75EF /* PostDataCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27978482355618D00BD75EF /* PostDataCore.swift */; };
-		C279784A2355619200BD75EF /* PostDataCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27978482355618D00BD75EF /* PostDataCore.swift */; };
 		C2AF12D12351A96F00329A15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12D02351A96F00329A15 /* AppDelegate.swift */; };
 		C2AF12D92351A96F00329A15 /* MyPosts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2AF12D72351A96F00329A15 /* MyPosts.xcdatamodeld */; };
 		C2AF12DB2351A97300329A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2AF12DA2351A97300329A15 /* Assets.xcassets */; };
@@ -64,7 +62,6 @@
 		C279783F23554B0E00BD75EF /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C279784023554B0E00BD75EF /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C279784323554BB600BD75EF /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		C27978482355618D00BD75EF /* PostDataCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataCore.swift; sourceTree = "<group>"; };
 		C2AF12CD2351A96F00329A15 /* MyPosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AF12D02351A96F00329A15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2AF12D82351A96F00329A15 /* MyPosts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyPosts.xcdatamodel; sourceTree = "<group>"; };
@@ -237,7 +234,6 @@
 				C279784023554B0E00BD75EF /* Post+CoreDataProperties.swift */,
 				C2B0A99C2353703C006A401C /* TablePostsViewCell.swift */,
 				C279784323554BB600BD75EF /* PersistenceManager.swift */,
-				C27978482355618D00BD75EF /* PostDataCore.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -468,7 +464,6 @@
 				C2B0A99F23538672006A401C /* InicialPageViewController.swift in Sources */,
 				C2AF12D12351A96F00329A15 /* AppDelegate.swift in Sources */,
 				C279784123554B0E00BD75EF /* Post+CoreDataClass.swift in Sources */,
-				C27978492355618D00BD75EF /* PostDataCore.swift in Sources */,
 				C2AF130C2351B04C00329A15 /* PostsApiRepositoryBehavior.swift in Sources */,
 				C279784223554B0E00BD75EF /* Post+CoreDataProperties.swift in Sources */,
 				C2B0A99D2353703C006A401C /* TablePostsViewCell.swift in Sources */,
@@ -494,7 +489,6 @@
 				C2AF131D2351B24D00329A15 /* PostsApiRepositoryBehavior.swift in Sources */,
 				C2AF131E2351B25500329A15 /* PostsApi.swift in Sources */,
 				C279784623554EAD00BD75EF /* Post+CoreDataProperties.swift in Sources */,
-				C279784A2355619200BD75EF /* PostDataCore.swift in Sources */,
 				C2AF13192351B23600329A15 /* ResponseGetData.swift in Sources */,
 				C2AF131C2351B24900329A15 /* PostsApiRepository.swift in Sources */,
 				C2AF131A2351B24000329A15 /* PostsBLBehavior.swift in Sources */,

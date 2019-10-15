@@ -129,6 +129,7 @@ extension ListPostsViewController {
     {
         let deleteAction = UITableViewRowAction(style: .normal, title: "Borrar") { (action, indexpath) in
             
+            self.persistenceManager.delete(self.dataForTableOfPosts[indexPath.row])
             self.dataForTableOfPosts.remove(at: indexPath.row)
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .right)
