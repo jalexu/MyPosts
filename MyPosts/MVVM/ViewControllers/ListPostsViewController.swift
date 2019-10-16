@@ -25,11 +25,10 @@ class ListPostsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bind()
-
     }
     
     private func bind() {
-        postsViewModel.output.isPostsReived.subscribe(
+        postsViewModel.output.isPostsRecived.subscribe(
             onNext: { isPostsReived in
                 
                 if isPostsReived == true {
@@ -44,9 +43,9 @@ class ListPostsViewController: UITableViewController{
             onNext: {
                 [weak self] indexPath in
                 if let cell = self?.tableViewCell.cellForRow(at: indexPath) as? TablePostsViewCell {
+                    cell.contentView.backgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
                     self!.dataForTableOfPosts[indexPath.row].read = true
                     self!.persistenceManager.saveContext()
-                    cell.contentView.backgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
                     self!.tableViewCell.deselectRow(at: indexPath, animated: false)
                 }
                 
@@ -56,7 +55,6 @@ class ListPostsViewController: UITableViewController{
         //tableViewCell.rx.setDataSource(self).disposed(by: disposedBag)
         
     }
-    
     
     private func callDataForCells(position: Int) {
         for data in postsViewModel.output.postsFromCoreData.value {
@@ -86,13 +84,9 @@ class ListPostsViewController: UITableViewController{
             return UIImage(named: "User3", in: Bundle.main, compatibleWith: nil)!
         }
     }
-    
-    private func reduceCountCell(){
-        if countCell >= 0 {
-            countCell -= 1
-        }
-    }
 
+    
+    
 }
 
 extension ListPostsViewController {
@@ -134,7 +128,6 @@ extension ListPostsViewController {
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .right)
             tableView.endUpdates()
-            self.reduceCountCell()
         }
         
         deleteAction.backgroundColor = .red

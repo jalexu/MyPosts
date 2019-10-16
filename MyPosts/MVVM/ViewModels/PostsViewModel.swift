@@ -16,15 +16,15 @@ class PostsViewModel: ViewModelProtocol {
     private let disposedBag = DisposeBag()
     private var postsBussinesLogic: PostsBLBehavior
     private var persistenceManager = PersistenceManager.shared
-    private var postsReceived: [ResponseGetData] = []
     
     struct Input {
         
     }
     
     struct Output {
+        var postsReceived = BehaviorRelay<[ResponseGetData]>(value: [])
         var postsFromCoreData = BehaviorRelay<[Post]>(value: [])
-        var isPostsReived = BehaviorRelay<Bool?>(value: nil)
+        var isPostsRecived = BehaviorRelay<Bool?>(value: nil)
         var messageError = BehaviorRelay<String?>(value: nil)
         
     }
@@ -48,11 +48,11 @@ class PostsViewModel: ViewModelProtocol {
     }
     
     func getData(){
-        self.output.isPostsReived.accept(false)
+        self.output.isPostsRecived.accept(false)
         do{
             try self.postsBussinesLogic.getPostOfData(id: 1).asObservable().retry(1).subscribe(
                 onNext:{ response in
-                    self.postsReceived = response
+                    self.output.postsReceived.accept(response)
                     self.createPost()
                     
             }, onError: { responseError in
@@ -68,10 +68,10 @@ class PostsViewModel: ViewModelProtocol {
     //create core data 
     private func createPost(){
         
-        for posts in self.output.postsFromCoreData.value {
+        for posts in self.output.postsReceived.value {
             let post = Post(context: persistenceManager.context)
-            post.userId = Int16(posts.userId)
-            post.id = Int16 (posts.id)
+            post.userId = Int16 (posts.userId!)
+            post.id = Int16 (posts.id!)
             post.title = posts.title
             post.body = posts.body
             post.read = false
@@ -81,7 +81,7 @@ class PostsViewModel: ViewModelProtocol {
         }
         let posts = persistenceManager.fetch(Post.self)
         self.output.postsFromCoreData.accept(posts)
-        self.output.isPostsReived.accept(true)
+        self.output.isPostsRecived.accept(true)
     }
     
     func getPostsFromApi(){
@@ -91,7 +91,7 @@ class PostsViewModel: ViewModelProtocol {
             self.getData()
         }else{
             self.output.postsFromCoreData.accept(posts)
-            self.output.isPostsReived.accept(true)
+            self.output.isPostsRecived.accept(true)
         }
     }
     
